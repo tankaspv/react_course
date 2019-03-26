@@ -18,9 +18,9 @@ class Human {
     displayInfo() {
       return this.name + ' ' + this.age + ' ' + this.dateOfBirth;
     }
-  }
+}
   
-  class Employee extends Human {
+class Employee extends Human {
     constructor(name, age, dateOfBirth, salary, department) {
       super(name, age, dateOfBirth);
       this.salary = salary;
@@ -29,9 +29,9 @@ class Human {
     displayInfo(){
       return super.displayInfo() + ' ' + this.salary + ' ' + this.department;
     }
-  }
+}
   
-  class Manager extends Employee {
+class Manager extends Employee {
     constructor(name, age, dateOfBirth, salary, department) {
       super (name, age, dateOfBirth, salary, department);
       this.developers = [];
@@ -43,9 +43,9 @@ class Human {
       let id = this.developers.indexOf(developer);
       this.developers.splice(id);
     }
-  }
+}
   
-  class Developer extends Employee {
+class Developer extends Employee {
     constructor(name, age, dateOfBirth, salary, department) {
       super (name, age, dateOfBirth, salary, department);
       this.manager = '';
@@ -53,28 +53,28 @@ class Human {
     addManager(manager) {
       this.manager = manager;
     }
-  }
+}
   
-  // Проверки
-  let myHuman = new Human('Mike', 32, '16.04.1987');
-  console.log(myHuman.displayInfo());
-  
-  let myEmployee = new Employee('Maria', 30, '10.01.1989', 1000, 'IT');
-  console.log(myEmployee.displayInfo());
-  
-  let myManager = new Manager('Alex', 35, '10.01.1984', 2000, 'Analytics');
-  console.log(myManager.displayInfo());
-  
-  myManager.addDeveloper('Max');
-  myManager.addDeveloper('Vasily');
-  myManager.addDeveloper('Ivan');
-  console.log(myManager.developers);
-  
-  myManager.delDeveloper('Ivan');
-  console.log(myManager.developers);
-  
-  let myDeveloper = new Developer('Ivan', 30, '10.01.1989', 1500, 'Developers');
-  console.log(myDeveloper.displayInfo());
-  
-  myDeveloper.addManager('Manager1');
-  console.log(myDeveloper.manager);
+// Проверки
+let myHuman = new Human('Mike', 32, '16.04.1987');
+console.log(myHuman.displayInfo());
+
+let myEmployee = new Employee('Maria', 30, '10.01.1989', 1000, 'IT');
+console.log(myEmployee.displayInfo());
+
+let myManager = new Manager('Alex', 35, '10.01.1984', 2000, 'Analytics');
+console.log(myManager.displayInfo());
+
+myManager.addDeveloper('Max');
+myManager.addDeveloper('Vasily');
+myManager.addDeveloper('Ivan');
+console.log(myManager.developers);
+
+myManager.delDeveloper('Ivan');
+console.log(myManager.developers);
+
+let myDeveloper = new Developer('Ivan', 30, '10.01.1989', 1500, 'Developers');
+console.log(myDeveloper.displayInfo());
+
+myDeveloper.addManager('Manager1');
+console.log(myDeveloper.manager);

@@ -13,7 +13,7 @@ function loop(times = 0, callback = null) {
   
   function hello() {
     console.log('Hello');
-  }
+}
   
-  console.log(loop(10, hello));
-  console.log(loop(10, 8));
+console.log(loop(10, hello));
+console.log(loop(10, 8));

@@ -18,5 +18,6 @@ function calculateArea(a, b) {
   return {area, figure, input};
 }
 
+// Проверки
 console.log(calculateArea(2, 2));
 console.log(calculateArea(10, 2));
